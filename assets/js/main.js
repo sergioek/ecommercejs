@@ -1,19 +1,14 @@
 const newUser = ()=>{
-    let name= prompt('Ingrese su nombre:');
-    let user= prompt('Ingrese un usuario:');
     let email= prompt('Ingrese un email:');
     let password= prompt('Ingrese un password:');
     
-    while(name ==='' || user ==='' || email ==='' || password ===''){
-        name= prompt('El campo nombre no puede estar vacio:');
-        user= prompt('El campo  usuario no puede estar vacio:');
-        email= prompt('El campo  email no puede estar vacio:');
-        password= prompt('El campo  password no puede estar vacio:');
+    while(email ==='' || password ===''){
+        email= prompt('El campo  email no puede estar vacio. Ingrese un email:');
+        password= prompt('El campo  contraseña no puede estar vacio. Ingrese una constraseña:');
     }
    
-    
-   let userPerson = new User(name,user,email,password);
-   userPerson.newUserPerson();
+   let userPerson = new User(email,password);
+   userPerson.newUser();
    alert('Se registró un nuevo usuario');
 }
 
@@ -37,7 +32,7 @@ const login = ()=>{
 
         while(loginEmail==='' || loginPassword===''){
             loginEmail = prompt('El campo email no puede estar vacio.Reingrese su email.');
-            loginPassword = prompt('El campo passoword no puede estar vacio.Reingrese su passoword.');
+            loginPassword = prompt('El campo contraseña no puede estar vacio.Reingrese su contraseña.');
         }
 
         for (let i = 0; i < arrayUsers.length; i++) {
@@ -45,7 +40,7 @@ const login = ()=>{
 
             if(user.email === loginEmail || user.password === loginPassword){
                 loginState=true;
-                alert('Se inicio sesion como' + ' ' + user.name);
+                alert('Se inicio sesion como' + ' ' + user.email);
                 break;
     
             }else{
@@ -53,7 +48,8 @@ const login = ()=>{
             }
         }
 
-        
+
+
     }else{
         alert('Ya existe un usuario logueado.')
     }
