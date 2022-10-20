@@ -5,12 +5,11 @@ class User{
         this.name = name;
         this.email = email;
         this.password = password; 
-        
     }
 
     newUserPerson(){
-        
         let nameUser= this.user;
+        
         nameUser= {
             user: this.user,
             name: this.name,
