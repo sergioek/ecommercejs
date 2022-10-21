@@ -55,7 +55,18 @@ const login = ()=>{
     }
     
 }
+console.log(objectProducts)
 
+const buy= ()=>{
+    alert('A continuacion ingrese "tazaverde","tazanegra","tazarosa" para comprar esos productos')
+    let product = prompt('Ingrese el nombre del producto a comprar:')
+
+    if(String(product) in objectProducts){
+        alert('El producto se encuentra en stock')
+    }else{
+        alert('El producto no se encuentra en disponibilidad')
+    }
+}
 
 
 
